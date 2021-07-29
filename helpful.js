@@ -30,15 +30,15 @@ jQuery(document).ready(function ($) {
             setCookie("helpful", JSON.stringify(helpfulCookie), 30);
 
             if (value == 1) {
-                $(".helpful-votes").fadeOut(400, function () {
-                    $(this).text(++votes).fadeIn(400);
+                $(".helpful-votes").fadeOut(333, function () {
+                    $(this).text(++votes).fadeIn(333);
                 });
 
                 setTimeout(function () {
                     $(".kentaurus-helpful").hide();
 
                     $(".helpful-thank-you").show();
-                }, 1600);
+                }, 1000);
             } else {
                 $(".kentaurus-helpful").hide();
                 $(".helpful-thank-you").show();
