@@ -1,16 +1,16 @@
 <?php
 // Adds custom column to admin
-function betspin_helpful_admin_columns($columns) {
+function kentaurus_helpful_admin_columns($columns) {
     return array_merge($columns, array('helpful' => 'Helpful'));
 }
 
 
 // Custom column content
-function betspin_helpful_stats_column($column, $post_id) {
+function kentaurus_helpful_stats_column($column, $post_id) {
 
     // Variables
-    $positive_value = intval(get_post_meta($post_id, "_betspin_helpful_yes", true));
-    $negative_value = intval(get_post_meta($post_id, "_betspin_helpful_no", true));
+    $positive_value = intval(get_post_meta($post_id, "_kentaurus_helpful_yes", true));
+    $negative_value = intval(get_post_meta($post_id, "_kentaurus_helpful_no", true));
 
     // Total
     $total = $positive_value + $negative_value;
@@ -29,17 +29,17 @@ function betspin_helpful_stats_column($column, $post_id) {
 }
 
 // Adds post type support
-function betspin_helpful_post_type_support(){
+function kentaurus_helpful_post_type_support(){
 
-    $post_types = array("post", "page", "casino-review");
+    $post_types = get_field('select_post_type_helpful','options');
 
     // loop selected type
     if(!empty($post_types)){
 
         foreach ($post_types as $selected_type) {
 
-            add_filter('manage_'.$selected_type.'_posts_columns', 'betspin_helpful_admin_columns');
-            add_action('manage_'.$selected_type.'_posts_custom_column', 'betspin_helpful_stats_column', 10, 2);
+            add_filter('manage_'.$selected_type.'_posts_columns', 'kentaurus_helpful_admin_columns');
+            add_action('manage_'.$selected_type.'_posts_custom_column', 'kentaurus_helpful_stats_column', 10, 2);
 
         }
 
@@ -47,4 +47,4 @@ function betspin_helpful_post_type_support(){
 
 }
 
-add_action("init", "betspin_helpful_post_type_support");
+add_action("init", "kentaurus_helpful_post_type_support");

@@ -1,16 +1,16 @@
 jQuery(document).ready(function ($) {
 
-    $(".wthf-yes-no span").on('click', function () {
+    $(".helpful-yes-no span").on('click', function () {
 
         let helpfulCookie = getCookie('helpful');
 
         let post_id = helpfulData.id;
 
-        let votes = helpfulData.positive[0];
-
         let value = parseInt($(this).attr("data-value"));
 
-        if(helpfulCookie.includes(post_id)){
+        let votes = helpfulData.positive[0];
+
+        if (helpfulCookie.includes(post_id)) {
             return false;
         }
 
@@ -28,17 +28,22 @@ jQuery(document).ready(function ($) {
             nonce: helpfulData.nonce_wthf
         }).done(function () {
             setCookie("helpful", JSON.stringify(helpfulCookie), 30);
-            $(".betspin-helpful").hide();
 
-            $(".helpful-thank-you").show();
+            if (value == 1) {
+                $(".helpful-votes").fadeOut(400, function () {
+                    $(this).text(++votes).fadeIn(400);
+                });
 
-            if(value == 1) {
                 setTimeout(function () {
-                    $(".helpful-votes").fadeOut(250, function () {
-                        $(this).text(++votes).fadeIn(250);
-                    });
-                }, 100);
+                    $(".kentaurus-helpful").hide();
+
+                    $(".helpful-thank-you").show();
+                }, 1600);
+            } else {
+                $(".kentaurus-helpful").hide();
+                $(".helpful-thank-you").show();
             }
+
 
         });
 

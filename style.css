@@ -1,47 +1,48 @@
-.betspin-helpful {
+.kentaurus-helpful {
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0 auto;
-    padding: 20px;
-    box-shadow: 0 1px 8px 0 rgb(0 0 0 / 10%);
-    margin:20px 0;
+    align-items: center;
+    margin: 30px auto;
+    max-width: 550px;
+
 }
 
-.betspin-helpful span {
+.kentaurus-helpful span {
     -webkit-transition: background-color 200ms, box-shadow 200ms;
     transition: background-color 200ms, box-shadow 200ms;
 }
 
 
-.wthf-title {
-    padding-right: 2em;
-    font-size: 16px;
-    font-weight: bold;
+.helpful-title {
+    margin-bottom: 15px;
+    font-size: 20px;
 }
 
-.helpful-extra {
-    font-size: 14px;
-    font-weight: 300;
-    margin:10px 0;
-}
-
-.wthf-yes-no {
+.helpful-yes-no {
     display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
 }
 
-.wthf-yes-no span {
-    flex:0 0 50%;
+.helpful-yes-no span {
+    flex:0 0 33%;
     padding: 0.4em 0.8em;
     border-radius: 0.2em;
-    background-color: rgba(255, 255, 255, 0.9);
-    color: #383838;
+    color: #1a73e8;
     cursor: pointer;
     font-size: 16px;
-    -webkit-box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.1);
+    color:#fff;
+}
+
+.helpful-yes-no span:first-child {
+     background-color: #45c1bf;
+}
+
+.helpful-yes-no span:nth-child(2) {
+    background-color: #fa8b8b;
 }
 
 .helpful-thank-you {
@@ -49,48 +50,42 @@
     text-align: center;
     font-weight: bold;
     font-size: 18px;
-    margin:20px 0;
 }
 
-.helpful-total-votes {
-    margin:20px 0;
-}
-
-.helpful-total-votes span{
-    font-weight: bold;
-}
-
-.helpful-results div {
-    display: inline-block;
-    font-size: 14px;
-    border-radius: 10px;
+.helpful-results {
+    font-size: 16px;
     margin-top: 10px;
 }
 
-.helpful-votes {
+.helpful-results span {
     font-weight: bold;
 }
 
-.wthf-yes-no span:hover {
-    background-color: #FFFFFF;
-    -webkit-box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.3);
+.helpful-yes-no span:first-child:hover {
+    background-color: #338e8c;
 }
 
-.wthf-yes-no span:active {
+.helpful-yes-no span:nth-child(2):hover {
+    background-color: #b46464;
+}
+
+.helpful-yes-no span:active {
     background-color: #FFFFFF;
     -webkit-box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.5);
 }
 
-.wthf-yes-no span:last-child {
+.helpful-yes-no span:first-child {
+    margin-right: 0.4em;
+}
+
+.helpful-yes-no span:last-child {
     margin-left: 0.4em;
 }
 
 @media (max-width: 767px) {
-    .betspin-helpful {
+    .kentaurus-helpful {
         flex-direction: column;
         justify-content: center;
         align-items: center;
