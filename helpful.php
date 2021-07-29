@@ -6,6 +6,7 @@ require_once __DIR__ . '/inc/helpful-shortcode.php';
 require_once __DIR__ . '/inc/helpful-admin-col.php';
 require_once __DIR__ . '/inc/helpful-acf.php';
 
+//To make it work with wp rocket plugin. Add dynamic and mandatory cookies
 function kentaurus_activate_cookies() {
 
     if ( is_plugin_active( 'wp-rocket/wp-rocket.php' ) ) {
